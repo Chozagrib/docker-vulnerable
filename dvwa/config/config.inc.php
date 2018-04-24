@@ -12,7 +12,8 @@ $DBMS = 'MySQL';
 #   WARNING: The database specified under db_database WILL BE ENTIRELY DELETED during setup.
 #   Please use a database dedicated to DVWA.
 $sf = new Violuke\Vault\ServiceFactory();
-
+$sys = $sf->get('sys');
+echo 'The vault ' . ($sys->sealed() ? 'is' : 'is not') . ' sealed';
 
 $_DVWA = array();
 $_DVWA[ 'db_server' ]   = '127.0.0.1';
